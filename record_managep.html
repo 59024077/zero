@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div class="card card-info">
+        <div class="card-body">
+            <div class="form-row mt-2">
+                <div class="col ">
+                    <table id="example1" class="table table-striped" class="display" style="width:100%">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">ลำดับที่</th>
+                                <th scope="col">รหัสบุคลากร</th>
+                                <th scope="col">ชื่อ - นามสกุล</th>
+                                <th scope="col">กลุ่มงาน</th>
+                                <th scope="col">แผนก</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="form-row md-2">
+                <div class="col-12">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                        data-target=".bd-example-modal-lg"><i class="far fa-user nav-icon"></i>
+                        เพิ่มข้อมูลบุคลากร</button>
+                    <!-- Modal -->
+                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <form enctype="multipart/form-data" onsubmit="saveinfor_em(); return false;" >
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">ข้อมูลบุคลากร</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <label>ข้อมูลการเข้าสู่ระบบ</label>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="input-group flex-nowrap">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="addon-wrapping"><i
+                                                                class="fas fa-id-badge"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="em_user" name="em_user"
+                                                        placeholder="Username" aria-label="Username"
+                                                        aria-describedby="addon-wrapping" required>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="input-group flex-nowrap">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="addon-wrapping"><i
+                                                                class="fas fa-key"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="em_pass" name="em_pass"
+                                                        placeholder="Password" aria-label="Username"
+                                                        aria-describedby="addon-wrapping" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label class="mt-3">ข้อมูลการส่วนตัว</label>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"
+                                                            id="basic-addon1">รหัสบุคลากร</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="em_id" name="em_id"
+                                                        aria-label="Username" aria-describedby="basic-addon1" required>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <label class="input-group-text"
+                                                            for="inputGroupSelect01">คำนำหน้า</label>
+                                                    </div>
+                                                    <select class="custom-select" id="em_intro" name="em_intro" required>
+                                                        <option selected></option>
+                                                        <option value="1">นาย</option>
+                                                        <option value="2">นางสาว</option>
+                                                        <option value="3">นาง</option>
+                                                        <option value="4">นายแพยท์</option>
+                                                        <option value="5">แพยท์หญิง</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">ชื่อ - นามสกุล</span>
+                                                    </div>
+                                                    <input type="text" id="em_fname" name="em_fname"
+                                                        aria-label="First name" class="form-control" required>
+                                                    <input type="text" id="em_lname" name="em_lname"
+                                                        aria-label="Last name" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">ชื่อเล่น</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="em_nickname"
+                                                        name="em_nickname" aria-label="Username"
+                                                        aria-describedby="basic-addon1" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"
+                                                            for="inputGroupSelect01">ชื่อกลุ่มงาน</span>
+                                                    </div>
+                                                    <select class="custom-select" id="em_gp" name="em_gp" required>
+                                                        <option selected>Choose...</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"
+                                                            for="inputGroupSelect01">ชื่อแแผนก</span>
+                                                    </div>
+                                                    <select class="custom-select" id="em_depart" name="em_depart"
+                                                        required>
+                                                        <option selected>Choose...</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"
+                                                            for="inputGroupSelect01">ตำแหน่ง</span>
+                                                    </div>
+                                                    <select class="custom-select" id="em_level" name="em_level"
+                                                        required>
+                                                        <option selected>Choose...</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"
+                                                            id="basic-addon1">วันลาพักร้อน/ปี</span>
+                                                    </div>
+                                                    <input type="number" id="em_dayoff" name="em_dayoff"
+                                                        class="form-control" aria-label="Username"
+                                                        aria-describedby="basic-addon1">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">ต่อปี</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="form-row">
+                                            <div class="col">
+                                                <label for="fileUpload">อัพโหลดรูปภาพ</label>
+                                                <input type="file" class="form-control" id="fileUpload"
+                                                    name="fileUpload" onchange="readURL(this)" required>
+                                            </div>
+                                        </div>
+                                        <figure class="figure text-center d-none mt-2">
+                                            <img id="imgUpload" class="figure-img img-fluid rounded" alt="">
+                                        </figure> -->
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">ปิด</button>
+                                        <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="controller_managep.js"></script>

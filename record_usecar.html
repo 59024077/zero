@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>แบบสำหรับขออนุญาตขอใช้รถส่วนกลาง</title>
+</head>
+
+<body>
+    <div class="containerfull">
+        <div class="accordion" id="accordlonExample">
+            <div class="card card-info">
+                <div class="card-header" id="headingOne">
+                    <h3 class="mb-0" style="color: #ffffff;">
+                        <i class="fas fa-car pr-10"> แบบสำหรับขออนุญาตขอใช้รถส่วนกลาง</i>
+                </div>
+                <div class="accordion" id="accordlonExample">
+                    <form id="mawin" onsubmit="save(); return false;">
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="col-6">
+                                    <div style="margin-bottom: 6px;">
+                                        <div class="input-group-prepend mt-3">
+                                            <span class="input-group-text">รหัสพนักงาน</span>
+                                            <select class="form-control" type="text" id="employee_id"
+                                                name="employee_id">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div style="margin-bottom: 6px;">
+                                        <div class="input-group-prepend mt-3">
+                                            <span class="input-group-text">วันที่บันทึก</span>
+                                            <input class="form-control" type="text" id="save_date"
+                                                name="save_date" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div style="margin-bottom: 6px;">
+                                        <div class="input-group mt-3">
+                                            <div class="input-group-prepend ">
+                                                <span class="input-group-text">ชื่อพนักงาน</span>
+                                            </div>
+                                            <input type="text" id="uc_firstname" aria-label="First name"
+                                                class="form-control" placeholder=" ชื่อ">
+                                            <input type="text" id="uc_lastname" aria-label="Last name"
+                                                class=" form-control" placeholder=" นามสกุล">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div style="margin-bottom: 6px;">
+                                        <div class="input-group-prepend mt-3">
+                                            <span class="input-group-text">วันและเวลาเริ่ม</span>
+                                            <input class="form-control" type="datetime-local" id="date_start"
+                                                name="date_start" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div style="margin-bottom: 6px;">
+                                        <div class="input-group-prepend mt-3">
+                                            <span class="input-group-text">รหัสผู้อนุมัติ</span>
+                                            <select class="form-control" type="text" id="ar_pass" name="ar_pass">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div style="margin-bottom: 6px;">
+                                        <div class="input-group-prepend mt-3">
+                                            <span class="input-group-text">วันและเวลาสิ้นสุด</span>
+                                            <input class="form-control" type="datetime-local" id="date_end"
+                                                name="date_end" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div style="margin-bottom: 6px;">
+                                        <div class="input-group mt-3">
+                                            <div class="input-group-prepend ">
+                                                <span class="input-group-text">ชื่อผู้อนุมัติ</span>
+                                            </div>
+                                            <input type="text" id="ar_firstname" aria-label="First name"
+                                                class="form-control" placeholder=" ชื่อ">
+                                            <input type="text" id="ar_lastname" aria-label="Last name"
+                                                class=" form-control" placeholder=" นามสกุล">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div style="margin-bottom: 6px;">
+                                        <div class="input-group-prepend mt-3">
+                                            <span class="input-group-text">อนุมัติการใช้รถ</span>
+                                            <select class="form-control" type="text" id="uc_approval"
+                                                name="uc_approval">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container "></div>
+                            <div class="text-left mt-3">
+                                <div class="input-group"> </div>
+                                <label for="example1">สถานที่ไป</label>
+                                <textarea class="form-control" id="place_to" rows="3"></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-6">
+                                    <div style="margin-bottom: 6px;">
+                                        <div class="input-group-prepend mt-3">
+                                            <span class="input-group-text">เพื่อ</span>
+                                            <input class="form-control" type="text" id="uc_for" name="uc_for">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-6">
+                                    <div style="margin-bottom: 6px;">
+                                        <div class="input-group-prepend mt-3">
+                                            <span class="input-group-text">มีคนนั่ง</span>
+                                            <input class="form-control" type="text" id="uc_sit" name="uc_sit">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div style="margin-bottom: 6px;">
+                                        <div class="input-group-prepend mt-3">
+                                            <span class="input-group-text">ใช้รถ</span>
+                                            <input class="form-control" type="text" id="uc_car" name="uc_car">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div style="margin-bottom: 6px;">
+                                        <div class="input-group-prepend mt-3">
+                                            <span class="input-group-text">ทะเบียน</span>
+                                            <input class="form-control" type="text" id="uc_register" name="uc_register">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div style="margin-bottom: 6px;">
+                                        <div class="input-group-prepend mt-3">
+                                            <span class="input-group-text">ผู้ขับ</span>
+                                            <select class="form-control" type="text" id="name_rider" name="name_rider">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center">
+                            <div class="form-row text-center pb-3">
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary mr-2">บันทึกข้อมูล</btton>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="controller_record_usecar.js"></script>

@@ -1,0 +1,75 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">คำร้องขออนุญาตลา</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <!-- content-header -->
+    <div class="card">
+        <div class="card-header text-center">
+            <br>
+            <h3 class="mb-3">คำร้องขออนุญาตลา</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <div class="form-row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">วันเริ่มต้นและสิ้นสุดปีงบประมาณ</span>
+                        </div>
+                        <input type="date" aria-label="First name" class="form-control" readonly>
+                        <input type="date" aria-label="Last name" class="form-control" readonly>
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-row">
+                        <div class="col-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">ประเภทการลา</label>
+                                </div>
+                                <select class="custom-select" id="type_leave" name="type_leave">
+                                    <option selected></option>
+                                    <option value="1">ลาป่วย</option>
+                                    <option value="2">ลากิจส่วนตัว</option>
+                                    <option value="3">ลาคลอดบุตร</option>
+                                    <option value="4">ลาพักผ่อน</option>
+                                    <option value="5">ลาไปราชการ</option>
+                                    <option value="6">ลาไปช่วยราชการ</option>
+                                    <option value="7">ลาลาศึกษาต่อ</option>
+                                    <option value="8">ลาลงเวรและออฟเวร</option>
+                                    <option value="9">ลาช่วยเหลือภรรยาคลอดบุตร</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <button type="button" class="btn btn-success" onclick="add_leave()" id="add_leave"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- /.content-header -->
+    <div id="hidden_data"></div>
+    <div id="hidden_record"></div>
+
+</section>
+<!-- /.content -->
+<!-- sweetalert2-->

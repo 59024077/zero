@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div class="card card-info">
+        <div class="card-header">
+            <div class="m-2">
+                <i class="far fa-edit fa-2x mr-3"></i>
+                <span id="tital_rec" class="h3"></span>
+            </div>
+        </div>
+        <form id="submit_leave" onsubmit=" save_leave(); return false">
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">วันที่บันทึกข้อมูล</span>
+                            </div>
+                            <input class="form-control timesave_lea" id="timesave_lea" name="timesave_lea">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">รหัสพนักงาน</span>
+                            </div>
+                            <input type="text" class="form-control" id="id_employee" name="id_employee">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">ชื่อ - นามสกุล</span>
+                            </div>
+                            <input type="text" class="form-control" id="fn_employee" name="fn_employee">
+                            <input type="text" class="form-control" id="ln_employee" name="ln_employee">
+                        </div>
+                        <p>
+                            จำนวนวันลา/วัน
+                        </p>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" name="num_lea" id="num_lea"
+                                                aria-label="Radio button for following text input">
+                                        </div>
+                                    </div>
+                                    <input type="text" value="0.5" class="form-control"
+                                        aria-label="Text input with radio button" disabled>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" name="num_lea" id="num_lea"
+                                                aria-label="Radio button for following text input">
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" value="1.0"
+                                        aria-label="Text input with radio button" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">วันที่เริ่มต้นลา</span>
+                            </div>
+                            <input type="date" class="form-control" id="str_lea" name="str_lea">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">วันที่สิ้นสุดลา</span>
+                            </div>
+                            <input type="date" class="form-control" id="fin_lea" name="fin_lea">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">ที่ติดต่อระหว่างลา</span>
+                            </div>
+                            <textarea class="form-control" id="lea_contect" name="lea_contect"
+                                aria-label="With textarea" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">หมายเหตุ</span>
+                            </div>
+                            <textarea class="form-control" id="lea_other" name="lea_other" aria-label="With textarea"
+                                rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="form-row text-center pb-3">
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">บันทึกข้อมูล</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+<script src="controller_record_leave.js"></script>

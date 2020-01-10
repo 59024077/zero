@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div class="card card-info">
+        <div class="card-header">
+            <div class="m-2">
+                <i class="far fa-edit fa-2x mr-3"></i>
+                <span id="tital_rec" class="h3"></span>
+            </div>
+        </div>
+        <form id="submit_leave" onsubmit=" save_leave(); return false">
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">วันที่บันทึกข้อมูล</span>
+                            </div>
+                            <input class="form-control timesave_lea" id="timesave_lea" name="timesave_lea">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">รหัสพนักงาน</span>
+                            </div>
+                            <input type="text" class="form-control" id="id_employee" name="id_employee">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">ชื่อ - นามสกุล</span>
+                            </div>
+                            <input type="text" class="form-control" id="fn_employee" name="fn_employee">
+                            <input type="text" class="form-control" id="ln_employee" name="ln_employee">
+                        </div>
+                        <p>
+                            จำนวนวันลา/วัน
+                        </p>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" name="num_lea" id="num_lea"
+                                                aria-label="Radio button for following text input">
+                                        </div>
+                                    </div>
+                                    <input type="text" value="0.5" class="form-control"
+                                        aria-label="Text input with radio button" disabled>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" name="num_lea" id="num_lea"
+                                                aria-label="Radio button for following text input">
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" value="1.0"
+                                        aria-label="Text input with radio button" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">วันที่เริ่มต้นลา</span>
+                            </div>
+                            <input type="date" class="form-control" id="str_lea" name="str_lea">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">วันที่สิ้นสุดลา</span>
+                            </div>
+                            <input type="date" class="form-control" id="fin_lea" name="fin_lea">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">สถานที่ไปราชการ</span>
+                            </div>
+                            <textarea class="form-control" id="lea_contect" name="lea_contect"
+                                aria-label="With textarea" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-2">การขอเบิกงบประมาณ</p>
+                <div class="form-row mt-3">
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">ขอเบิกงบจาก</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option selected></option>
+                                <option value="1">เงินซ่อมบำรุง</option>
+                                <option value="2">เงินงนประมาณประจำปี</option>
+                                <option value="3">เงินงบประมาณส่วนกลาง</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">จำนวน</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                            <div class="input-group-append">
+                                <span class="input-group-text">บาท</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-2">เดินทางโดย</p>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input type="radio" name="how_go" id="how_go1" value="1" aria-label="Radio button for following text input">
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" value="รถส่วนตัว"
+                                aria-label="Text input with radio button" disabled>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input type="radio" value="2" name="how_go" id="how_go2" aria-label="Radio button for following text input">
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" value="รถส่วนกลาง"
+                                aria-label="Text input with radio button" disabled>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input type="radio" name="how_go" id="how_go3" value="3" aria-label="Radio button for following text input">
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" value="อื่น ๆ"
+                                aria-label="Text input with radio button" disabled>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon3">โปรดระบุ</span>
+                            </div>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                                disabled>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-2">ผู้ร่วมเดินทางไปด้วย</p>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" name="p_have" id="p_unhave" value="1"  aria-label="Radio button for following text input">
+                                        </div>
+                                    </div>
+                                    <input type="text" value="มีผู้ร่วมเดินทาง" class="form-control" aria-label="Text input with radio button" disabled>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <input type="radio" name="p_have" id="p_have" value="2" aria-label="Radio button for following text input">
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" value="ไม่มีผู้ร่วมเดินทาง" aria-label="Text input with radio button" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="จำนวนผู้ร่วมเดินทาง"
+                                aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button"
+                                    id="button-addon2">เพิ่มข้อมูล</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-2">ดังนี้</p>
+                <div class="form-row mt-2">
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">1.</span>
+                            </div>
+                            <input type="text" name="pe_1" id="pe_1" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">2.</span>
+                            </div>
+                            <input type="text" name="pe_2" id="pe_2" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">3.</span>
+                            </div>
+                            <input type="text" name="pe_3" id="pe_3" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">4.</span>
+                            </div>
+                            <input type="text" name="pe_4" id="pe_4" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">5.</span>
+                            </div>
+                            <input type="text" name="pe_5" id="pe_5" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">6.</span>
+                            </div>
+                            <input type="text" name="pe_6" id="pe_6" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">7.</span>
+                            </div>
+                            <input type="text" name="pe_7" id="pe_7" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">8.</span>
+                            </div>
+                            <input type="text" name="pe_8" id="pe_8" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">9.</span>
+                            </div>
+                            <input type="text" name="pe_9" id="pe_9" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">10.</span>
+                            </div>
+                            <input type="text" name="pe_10" id="pe_10" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">ตำแหน่ง</span>
+                            </div>
+                            <input type="text" name="pe_status1" id="pe_status1" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">ตำแหน่ง</span>
+                            </div>
+                            <input type="text" name="pe_status2" id="pe_status2" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">ตำแหน่ง</span>
+                            </div>
+                            <input type="text" name="pe_status3" id="pe_status3" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">ตำแหน่ง</span>
+                            </div>
+                            <input type="text" name="pe_status4" id="pe_status4" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">ตำแหน่ง</span>
+                            </div>
+                            <input type="text" name="pe_status5" id="pe_status5" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">ตำแหน่ง</span>
+                            </div>
+                            <input type="text" name="pe_status6" id="pe_status6" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">ตำแหน่ง</span>
+                            </div>
+                            <input type="text" name="pe_status7" id="pe_status7" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">ตำแหน่ง</span>
+                            </div>
+                            <input type="text" name="pe_status8" id="pe_status8" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">ตำแหน่ง</span>
+                            </div>
+                            <input type="text" name="pe_status9" id="pe_status9" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">ตำแหน่ง</span>
+                            </div>
+                            <input type="text" name="pe_status10" id="pe_status10" class="form-control" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="form-row text-center pb-3">
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">บันทึกข้อมูล</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+<script src="controller_record_leave.js"></script>

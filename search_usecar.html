@@ -1,0 +1,90 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+            event.preventDefault();
+            $('#lightbox').ekkoLightbox();
+        });
+
+        $('#example').DataTable({
+
+
+            "scrollY": 500,
+            "scrollX": true,
+            "scrollCollapse": true,
+
+            "oLanguage": {
+                "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+                "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
+                "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+                "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
+                "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
+                "sSearch": " ค้นหา ",
+                "oPaginate": {
+                    "sPrevious": "ก่อนหน้า",
+                    "sNext": "ถัดไป"
+                }
+            }
+        });
+    });
+</script><!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">คำร้องขออนุญาตใช้รถส่วนกลาง</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <!-- content-header -->
+    <div class="card">
+        <div class="card-header text-center">
+            <br>
+            <h3 class="mb-3">คำร้องขออนุญาตใช้รถส่วนกลาง</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <div class="form-row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">วันเริ่มต้นปีงบประมาณ</span>
+                        </div>
+                        <input type="date" aria-label="First name" class="form-control" readonly>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">วันสิ้นสุดปีงบประมาณ</span>
+                        </div>
+                        <input type="date" aria-label="Last name" class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <button type="button" class="btn btn-success" onclick="add_usecar()" id="add_usecar"><i
+                            class="fas fa-plus"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- /.content-header -->
+    <div id="hidden_data"></div>
+    <div id="hidden_record"></div>
+
+</section>
+<!-- /.content -->
+<!-- sweetalert2-->
+<script src="controller_record_usecar.js"></script>
